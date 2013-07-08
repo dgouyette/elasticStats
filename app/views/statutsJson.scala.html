@@ -1,0 +1,25 @@
+@(title: String, subtitle : String, data : List[Long])
+
+{"title": {
+    "text": "@title"
+},
+"tooltip": {
+    "pointFormat": "{series.name}: <b>{point.percentage:.1f}%</b>"
+}, "xAxis": {
+    "categories": ["2008", "2009", "2010", "2011", "2012", "2013"]
+},
+"series": [{
+    "type": "pie",
+    "name": "Statuts des paiements",
+    "data": [
+        {
+            "name": "Paiements acceptés",
+            "y": @data(0),
+            "sliced": true,
+            "selected": true
+        },
+        ["Paiements refusés",   @data(1)]
+    ]
+}]
+
+}
